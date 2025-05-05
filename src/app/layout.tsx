@@ -14,13 +14,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="relative min-h-screen text-white font-sans overflow-x-hidden">
         {/* Background image (behind everything) */}
-        <Image
-          src="/forest.png"
-          alt="Forest pixel art"
-          fill
-          priority
-          className="object-cover z-0 fixed"
-        />
+        <div className="fixed top-0 left-0 w-screen h-screen z-0">
+          <Image
+            src="/forest.png"
+            alt="Forest pixel art"
+            fill
+            priority
+            className="object-cover object-center"
+            style={{ imageRendering: 'pixelated' }}
+          />
+        </div>
 
         {/* Overlay to slightly darken the image (optional) */}
         <div className="fixed inset-0 bg-black/60 z-0" />
