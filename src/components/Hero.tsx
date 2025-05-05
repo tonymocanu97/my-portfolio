@@ -1,16 +1,9 @@
-import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { FiChevronsDown } from 'react-icons/fi';
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center text-white overflow-hidden">
-      {/* Background image */}
-      <Image src="/forest.png" alt="Forest pixel art" fill priority className="object-cover z-0" />
-
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
-
       {/* Text content */}
       <div className="z-20 text-center px-6">
         <h1 className="text-4xl md:text-6xl font-bold font-sans text-white animate-float">
