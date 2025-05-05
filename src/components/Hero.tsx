@@ -1,17 +1,12 @@
-import Image from "next/image";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Image from 'next/image';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FiChevronsDown } from 'react-icons/fi';
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center text-white overflow-hidden">
       {/* Background image */}
-      <Image
-        src="/forest.png"
-        alt="Forest pixel art"
-        fill
-        priority
-        className="object-cover z-0"
-      />
+      <Image src="/forest.png" alt="Forest pixel art" fill priority className="object-cover z-0" />
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
@@ -34,31 +29,37 @@ export default function Hero() {
         </div>
         {/* Social Icons */}
         <div className="flex items-center justify-center gap-6 text-white text-2xl mt-6">
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-green-400 transition"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-green-400 transition"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://twitter.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-green-400 transition"
-            >
-              <FaTwitter />
-            </a>
-          </div>
+          <a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-400 transition"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-400 transition"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://twitter.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-400 transition"
+          >
+            <FaTwitter />
+          </a>
+        </div>
+      </div>
+      {/* Bouncing arrow */}
+      <div className="z-20 absolute bottom-8 animate-bounce text-white text-4xl">
+        <a href="#about" aria-label="Scroll Down">
+          <FiChevronsDown />
+        </a>
       </div>
     </section>
   );
