@@ -18,6 +18,7 @@ const schema = z.object({
 
 export function Contact() {
   const [values, setValues] = useState({ name: '', email: '', message: '' });
+  const [honeypot, setHoneypot] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = async (e: FormEvent) => {
@@ -33,7 +34,7 @@ export function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(parsed.data),
+        body: JSON.stringify({ ...parsed.data, honeypot }),
       });
       if (!res.ok) throw new Error();
       toast.success('Thanks - your message is on its way.');
@@ -61,6 +62,16 @@ export function Contact() {
 
       <Reveal delay={100}>
         <form onSubmit={onSubmit} className="mt-10 space-y-4">
+          <input
+            type="text"
+            name="company"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-0 w-0 overflow-hidden opacity-0"
+          />
           <input
             className={field}
             placeholder="Name"

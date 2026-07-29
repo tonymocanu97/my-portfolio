@@ -6,6 +6,7 @@ const schema = z.object({
   name: z.string().trim().nonempty().max(100),
   email: z.string().trim().email().max(255),
   message: z.string().trim().nonempty().max(1000),
+  honeypot: z.string().optional(),
 });
 
 const CONTACT_RECIPIENT = 'tonymocanu97@gmail.com';
@@ -15,6 +16,11 @@ export async function POST(request: NextRequest) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({ error: parsed.error.issues[0].message }, { status: 400 });
+  }
+
+  if (parsed.data.honeypot) {
+    // Likely a bot — pretend success without sending anything.
+    return NextResponse.json({ ok: true });
   }
 
   if (!process.env.RESEND_API_KEY) {
