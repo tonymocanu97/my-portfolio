@@ -8,7 +8,7 @@ const schema = z.object({
   message: z.string().trim().nonempty().max(1000),
 });
 
-const CONTACT_RECIPIENT = 'tonymocanu97@yahoo.com';
+const CONTACT_RECIPIENT = 'tonymocanu97@gmail.com';
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
