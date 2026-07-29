@@ -5,7 +5,7 @@ import { Toaster } from 'sonner';
 import { CustomCursor } from '@/components/portfolio/CustomCursor';
 import './globals.css';
 
-const TITLE = 'Tony Mocanu — Senior Software Engineer';
+const TITLE = 'Cristian Mocanu - Senior Software Engineer';
 const DESCRIPTION =
   'Senior Software Engineer in Romania building full-stack products: .NET APIs, React front-ends, React Native apps and Azure cloud infrastructure.';
 
@@ -24,7 +24,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
-  authors: [{ name: 'Tony Mocanu' }],
+  authors: [{ name: 'Cristian Mocanu' }],
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,

@@ -33,7 +33,7 @@ export function Navbar() {
     >
       <nav className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:flex sm:justify-between">
         <a href="#home" className="flex min-w-0 items-center gap-2">
-          <span className="font-display text-lg font-bold tracking-tight">Tony Mocanu</span>
+          <span className="font-display text-lg font-bold tracking-tight">Cristian Mocanu</span>
           <span className="font-display text-sm text-primary">{'</dev>'}</span>
         </a>
 

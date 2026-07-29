@@ -22,7 +22,7 @@ export function Hero() {
           <div className="mt-4 flex items-center gap-4">
             <span className="hidden h-px w-16 bg-primary sm:block" />
             <p className="font-display text-2xl font-medium text-foreground/90 sm:text-3xl">
-              I&apos;m Tony
+              I&apos;m Cristian
             </p>
           </div>
 
@@ -31,7 +31,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground">
-            I build full-stack products that ship — from .NET APIs to React Native mobile apps.
+            I build full-stack products that ship - from .NET APIs to React Native mobile apps.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -81,7 +81,7 @@ export function Hero() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={portrait}
-            alt="Tony Mocanu, senior software engineer"
+            alt="Cristian Mocanu, senior software engineer"
             width={912}
             height={1200}
             className="relative z-10 w-[86%] animate-float drop-shadow-[0_35px_60px_rgba(0,0,0,0.6)]"

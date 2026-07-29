@@ -26,7 +26,7 @@ export function Contact() {
       toast.error(parsed.error.issues[0].message);
       return;
     }
-    toast.success('Thanks — your message is on its way.');
+    toast.success('Thanks - your message is on its way.');
     setValues({ name: '', email: '', message: '' });
   };
 

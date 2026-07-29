@@ -50,8 +50,8 @@ export function About() {
         <Reveal>
           <h2 className="font-display text-4xl font-bold sm:text-5xl">About me</h2>
           <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-            I&apos;m Tony, a Senior Software Engineer based in Romania with 6 years of experience. I
-            build clean, well-architected products — from REST APIs and cloud infrastructure to
+            I&apos;m Cristian, a Senior Software Engineer based in Romania with 6 years of experience. I
+            build clean, well-architected products - from REST APIs and cloud infrastructure to
             mobile apps live on the App Store and Google Play.
           </p>
 
