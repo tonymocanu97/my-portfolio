@@ -3,33 +3,33 @@ import { Reveal } from './Reveal';
 const milestones = [
   {
     year: '2019',
-    title: 'First engineering role',
-    body: '.NET line-of-business systems.',
+    title: "Bachelor's Degree",
+    body: 'Software engineering fundamentals at "Lucian Blaga" University of Sibiu — C++, algorithms, data structures, computer networks.',
   },
   {
     year: '2020',
-    title: 'Grew into backend',
-    body: 'ASP.NET Core, EF Core, Azure, GitHub Actions.',
+    title: 'Junior Analyst, IFM',
+    body: 'First engineering role — building web apps for production processes, working closely with operators and industrial engineers.',
   },
   {
     year: '2021',
-    title: 'Full-stack',
-    body: 'React frontends against my own APIs, plus SignalR real-time work.',
+    title: "Master's Degree",
+    body: 'Embedded systems, hardware-software integration, real-time systems and IoT.',
   },
   {
     year: '2022',
-    title: 'Mobile',
-    body: 'Built and shipped LifeSwap to the App Store and Google Play with React Native and Expo.',
+    title: 'Software Engineer, IFM',
+    body: 'Built and maintained 20+ web and desktop apps across international factories, and led the migration to Azure.',
   },
   {
-    year: '2023',
-    title: 'Indie maker',
-    body: 'Multiple SaaS and client projects running in parallel.',
+    year: '2024',
+    title: 'Hardware & mentoring',
+    body: 'Developed hardware drivers with a DLL-based interface and WPF UI, and mentored junior developers.',
   },
   {
-    year: '2024–2025',
-    title: 'Senior',
-    body: 'Clean Architecture, distributed systems, mentoring, Azure cloud migration.',
+    year: '2025',
+    title: 'Senior Software Engineer, LifeSwap',
+    body: 'Building a mental wellness app with an AI chat companion — React Native, Expo, multi-provider auth and analytics.',
   },
 ];
 
