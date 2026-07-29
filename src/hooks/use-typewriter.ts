@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const DEFAULT_WORDS = ['Problem Solver', 'Indie Maker', 'Senior Software Engineer'];
+const DEFAULT_WORDS = ['Problem Solver', 'Product Engineer', 'Software Engineer'];
 
 /** Types out each word letter by letter, pauses, deletes it, then moves to the next. */
 export function useTypewriter({
