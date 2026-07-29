@@ -19,9 +19,11 @@ const projects: {
   status: Status;
   github?: string | GithubLink[];
   demo?: string;
+  image?: string;
 }[] = [
   {
     name: 'LifeSwap',
+    image: '/projects/lifeswap.png',
     description: 'Wellness mobile app shipped to both app stores.',
     tech: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'AWS', 'RevenueCat', 'Sentry'],
     status: 'Live',
@@ -29,6 +31,7 @@ const projects: {
   },
   {
     name: 'PolyVerify',
+    image: '/projects/polyverify.png',
     description: 'Blockchain forensics platform for tracing transactions.',
     tech: ['Next.js', 'React', 'TypeScript', 'SQLite', 'Privy'],
     status: 'Live',
@@ -36,6 +39,7 @@ const projects: {
   },
   {
     name: 'Mr. Crypto',
+    image: '/projects/mrcrypto.png',
     description: "Website for Romania's largest crypto community.",
     tech: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'LI.FI', 'Twitter API'],
     status: 'Live',
@@ -49,6 +53,7 @@ const projects: {
   },
   {
     name: 'Vector',
+    image: '/projects/vector.png',
     description: 'Pro esports merch store with a full commerce backend.',
     tech: ['ASP.NET Core', 'EF Core', 'React', 'TypeScript', 'PostgreSQL'],
     status: 'Personal',
@@ -57,6 +62,7 @@ const projects: {
   },
   {
     name: 'Pulse',
+    image: '/projects/pulse.png',
     description: 'Real-time chat app built on a clean CQRS backend.',
     tech: ['ASP.NET Core', 'SignalR', 'MediatR', 'React', 'TypeScript', 'PostgreSQL'],
     status: 'Personal',
@@ -65,6 +71,7 @@ const projects: {
   },
   {
     name: 'CaloriePal',
+    image: '/projects/caloriepal.png',
     description: 'Fitness and nutrition web app with tracking analytics.',
     tech: ['ASP.NET Core', 'EF Core', 'MediatR', 'Next.js', 'React', 'TypeScript', 'PostgreSQL'],
     status: 'Personal',
@@ -76,6 +83,7 @@ const projects: {
   },
   {
     name: 'Linea',
+    image: '/projects/linea.png',
     description: 'Production line monitoring dashboard with AI insights.',
     tech: ['ASP.NET Core', 'Angular', 'TypeScript', 'SQLite', 'OpenAI'],
     status: 'Personal',
@@ -102,18 +110,28 @@ export function Projects() {
                     'radial-gradient(circle at 30% 20%, color-mix(in oklab, var(--primary) 22%, transparent), transparent 60%), var(--gradient-surface)',
                 }}
               >
-                <div className="h-24 w-40 rounded-lg border border-border bg-background/70 shadow-inner transition-transform duration-300 group-hover:scale-105">
-                  <div className="flex h-5 items-center gap-1 border-b border-border px-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
+                {p.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={p.image}
+                    alt={`${p.name} screenshot`}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="h-24 w-40 rounded-lg border border-border bg-background/70 shadow-inner transition-transform duration-300 group-hover:scale-105">
+                    <div className="flex h-5 items-center gap-1 border-b border-border px-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary/70" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/40" />
+                    </div>
+                    <div className="grid h-[calc(100%-1.25rem)] place-items-center">
+                      <span className="font-display text-lg font-bold text-foreground/70">
+                        {p.name}
+                      </span>
+                    </div>
                   </div>
-                  <div className="grid h-[calc(100%-1.25rem)] place-items-center">
-                    <span className="font-display text-lg font-bold text-foreground/70">
-                      {p.name}
-                    </span>
-                  </div>
-                </div>
+                )}
               </div>
 
               <div className="flex flex-1 flex-col p-5">
