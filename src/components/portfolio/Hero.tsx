@@ -9,7 +9,7 @@ export function Hero() {
     <section id="home" className="relative overflow-hidden pt-28 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 top-10 h-130 w-130 rounded-full opacity-40 blur-[120px]"
+        className="pointer-events-none absolute -right-40 top-10 h-80 w-80 rounded-full opacity-40 blur-[120px]"
         style={{ background: 'var(--gradient-primary)' }}
       />
 
