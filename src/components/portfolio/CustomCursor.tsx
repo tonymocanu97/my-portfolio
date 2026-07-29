@@ -64,7 +64,7 @@ export function CustomCursor() {
       <div
         ref={dotRef}
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full"
+        className="pointer-events-none fixed left-0 top-0 z-9999 h-2 w-2 rounded-full"
         style={{
           background: 'var(--gradient-primary)',
           boxShadow: '0 0 10px 2px color-mix(in oklab, var(--primary) 65%, transparent)',
@@ -73,7 +73,7 @@ export function CustomCursor() {
       <div
         ref={ringRef}
         aria-hidden
-        className="pointer-events-none fixed z-[9998] h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/40"
+        className="pointer-events-none fixed z-9998 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/40"
       />
     </>
   );

@@ -2,34 +2,24 @@ import { Reveal } from './Reveal';
 
 const milestones = [
   {
-    year: '2019',
-    title: "Bachelor's Degree",
-    body: 'Software engineering fundamentals at "Lucian Blaga" University of Sibiu — C++, algorithms, data structures, computer networks.',
+    year: '2019 – 2021',
+    title: "Master's Degree, Lucian Blaga University",
+    body: 'Embedded systems, hardware-software integration, IoT.',
   },
   {
-    year: '2020',
+    year: '2020 – 2022',
     title: 'Junior Analyst, IFM',
-    body: 'First engineering role — building web apps for production processes, working closely with operators and industrial engineers.',
+    body: 'Web apps for production processes - C#, ASP.NET, MySQL.',
   },
   {
-    year: '2021',
-    title: "Master's Degree",
-    body: 'Embedded systems, hardware-software integration, real-time systems and IoT.',
-  },
-  {
-    year: '2022',
+    year: '2022 – 2025',
     title: 'Software Engineer, IFM',
-    body: 'Built and maintained 20+ web and desktop apps across international factories, and led the migration to Azure.',
+    body: '20+ web and desktop apps across international factories. Azure migration, hardware drivers, mentoring junior devs.',
   },
   {
-    year: '2024',
-    title: 'Hardware & mentoring',
-    body: 'Developed hardware drivers with a DLL-based interface and WPF UI, and mentored junior developers.',
-  },
-  {
-    year: '2025',
+    year: '2025 – Present',
     title: 'Senior Software Engineer, LifeSwap',
-    body: 'Building a mental wellness app with an AI chat companion — React Native, Expo, multi-provider auth and analytics.',
+    body: 'Mental wellness mobile app - React Native, Expo, Firebase, RevenueCat.',
   },
 ];
 
@@ -47,7 +37,7 @@ export function Journey() {
           <Reveal as="li" key={m.year} delay={i * 70} className="relative">
             <span
               aria-hidden
-              className="absolute -left-[41px] top-6 h-3 w-3 rounded-full bg-primary ring-4 ring-background"
+              className="absolute -left-10.25 top-6 h-3 w-3 rounded-full bg-primary ring-4 ring-background"
             />
             <div className="surface-card rounded-xl p-6">
               <span className="font-display text-sm font-bold text-primary">{m.year}</span>

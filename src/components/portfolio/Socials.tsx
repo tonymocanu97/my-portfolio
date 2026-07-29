@@ -1,9 +1,9 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
 const socials = [
-  { icon: Github, label: 'GitHub', href: 'https://github.com/' },
-  { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/' },
-  { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/' },
+  { icon: Github, label: 'GitHub', href: 'https://github.com/tonymocanu97' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/cristian-mocanu97/' },
+  { icon: Twitter, label: 'Twitter / X', href: 'https://x.com/cristian_mcn97' },
 ];
 
 export function Socials() {

@@ -2,13 +2,11 @@ import { Reveal } from './Reveal';
 
 const groups = [
   { title: 'Languages', items: ['C#', 'TypeScript', 'JavaScript'] },
-  { title: 'Backend', items: ['ASP.NET Core', 'EF Core', 'SignalR', 'MediatR'] },
+  { title: 'Backend', items: ['ASP.NET Core', 'EF Core', 'SignalR', 'MediatR', 'REST API'] },
   { title: 'Frontend', items: ['React', 'React Native', 'Next.js', 'Angular'] },
-  {
-    title: 'Cloud & DevOps',
-    items: ['Azure', 'Docker', 'GitHub Actions', 'Railway', 'Vercel'],
-  },
-  { title: 'Databases', items: ['PostgreSQL', 'SQL Server', 'SQLite'] },
+  { title: 'Cloud & DevOps', items: ['Azure', 'Docker', 'GitHub Actions', 'Railway', 'Vercel'] },
+  { title: 'Databases', items: ['MySQL', 'SQL Server', 'PostgreSQL', 'SQLite', ] },
+  { title: 'Testing', items: ['xUnit', 'Moq', 'FluentAssertions'] },
 ];
 
 export function TechStack() {

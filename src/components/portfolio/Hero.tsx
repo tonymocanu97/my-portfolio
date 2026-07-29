@@ -2,14 +2,14 @@ import { TypedHeadline } from './TypedHeadline';
 
 const portrait = '/tony-portrait.png';
 
-const stack = ['C#', 'ASP.NET Core', 'React Native', 'Azure', 'TypeScript', 'PostgreSQL', 'Docker'];
+const stack = ['C#', 'ASP.NET Core', 'React Native', 'React', 'Next.js', 'Azure', 'TypeScript', 'PostgreSQL', 'EF Core', 'Docker'];
 
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden pt-28 sm:pt-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 top-10 h-[520px] w-[520px] rounded-full opacity-40 blur-[120px]"
+        className="pointer-events-none absolute -right-40 top-10 h-130 w-130 rounded-full opacity-40 blur-[120px]"
         style={{ background: 'var(--gradient-primary)' }}
       />
 
@@ -67,7 +67,7 @@ export function Hero() {
 
           <div
             aria-hidden
-            className="absolute bottom-6 h-[300px] w-[300px] animate-glow-pulse rounded-full sm:h-[380px] sm:w-[380px]"
+            className="absolute bottom-6 h-75 w-75 animate-glow-pulse rounded-full sm:h-95 sm:w-95"
             style={{
               background:
                 'radial-gradient(circle, color-mix(in oklab, var(--primary) 45%, transparent) 0%, transparent 68%)',
@@ -75,7 +75,7 @@ export function Hero() {
           />
           <div
             aria-hidden
-            className="absolute bottom-6 h-[290px] w-[290px] rounded-full border-2 border-primary/70 sm:h-[360px] sm:w-[360px]"
+            className="absolute bottom-6 h-72.5 w-72.5 rounded-full border-2 border-primary/70 sm:h-90 sm:w-90"
           />
 
           {/* eslint-disable-next-line @next/next/no-img-element */}

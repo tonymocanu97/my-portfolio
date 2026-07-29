@@ -6,63 +6,80 @@ type Status = 'Live' | 'In Progress' | 'Personal' | 'Client Work';
 const statusStyles: Record<Status, string> = {
   Live: 'border-primary/50 bg-primary/12 text-primary',
   'In Progress': 'border-border bg-surface-2 text-muted-foreground',
-  Personal: 'border-border bg-surface-2 text-foreground/80',
+  Personal : 'border-border bg-surface-2 text-foreground/80',
   'Client Work': 'border-primary/30 bg-primary/8 text-primary/90',
 };
+
+type GithubLink = { label: string; href: string };
 
 const projects: {
   name: string;
   description: string;
   tech: string[];
   status: Status;
+  github?: string | GithubLink[];
+  demo?: string;
 }[] = [
   {
     name: 'LifeSwap',
     description: 'Wellness mobile app shipped to both app stores.',
-    tech: ['React Native', 'Expo', 'Azure', 'Firebase'],
+    tech: ['React Native', 'Expo', 'TypeScript', 'Firebase', 'AWS', 'RevenueCat', 'Sentry'],
     status: 'Live',
-  },
-  {
-    name: 'Mr. Crypto',
-    description: "Romania's largest crypto community website.",
-    tech: ['Next.js', 'Lovable'],
-    status: 'Client Work',
-  },
-  {
-    name: 'Vector',
-    description: 'Pro esports merch store with a full commerce backend.',
-    tech: ['ASP.NET Core', 'React', 'PostgreSQL'],
-    status: 'Personal',
-  },
-  {
-    name: 'Pulse',
-    description: 'Real-time chat app built on a clean CQRS backend.',
-    tech: ['ASP.NET Core', 'SignalR', 'MediatR', 'React'],
-    status: 'Personal',
-  },
-  {
-    name: 'Linea',
-    description: 'Production line monitoring dashboard with AI insights.',
-    tech: ['ASP.NET Core', 'Angular', 'OpenAI'],
-    status: 'Personal',
+    demo: 'https://lifeswap.app/',
   },
   {
     name: 'PolyVerify',
     description: 'Blockchain forensics platform for tracing transactions.',
-    tech: ['Next.js', 'React', 'SQLite'],
+    tech: ['Next.js', 'React', 'TypeScript', 'SQLite', 'Privy'],
+    status: 'Live',
+    demo: 'https://polyverify.com/',
+  },
+  {
+    name: 'Mr. Crypto',
+    description: "Website for Romania's largest crypto community.",
+    tech: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'LI.FI', 'Twitter API'],
+    status: 'Live',
+    demo: 'https://mrcrypto.network/',
+  },
+  {
+    name: 'Gogosh',
+    description: 'Mobile app built for a local food & coffee business.',
+    tech: ['React Native', 'Expo', 'TypeScript'],
+    status: 'In Progress',
+  },
+  {
+    name: 'Vector',
+    description: 'Pro esports merch store with a full commerce backend.',
+    tech: ['ASP.NET Core', 'EF Core', 'React', 'TypeScript', 'PostgreSQL'],
     status: 'Personal',
+    github: 'https://github.com/tonymocanu97/vector',
+    demo: 'https://vector-web-ruby.vercel.app/',
+  },
+  {
+    name: 'Pulse',
+    description: 'Real-time chat app built on a clean CQRS backend.',
+    tech: ['ASP.NET Core', 'SignalR', 'MediatR', 'React', 'TypeScript', 'PostgreSQL'],
+    status: 'Personal',
+    github: 'https://github.com/tonymocanu97/pulse',
+    demo: 'https://pulse-web-henna-two.vercel.app/',
   },
   {
     name: 'CaloriePal',
     description: 'Fitness and nutrition web app with tracking analytics.',
-    tech: ['ASP.NET Core', 'Next.js', 'PostgreSQL'],
+    tech: ['ASP.NET Core', 'EF Core', 'MediatR', 'Next.js', 'React', 'TypeScript', 'PostgreSQL'],
     status: 'Personal',
+    github: [
+      { label: 'Web', href: 'https://github.com/CaloriePal/caloriepal-web' },
+      { label: 'API', href: 'https://github.com/CaloriePal/caloriepal-api' },
+    ],
+    demo: 'https://caloriepal-web.vercel.app/',
   },
   {
-    name: 'Gogosh',
-    description: 'Food and coffee ordering mobile app.',
-    tech: ['React Native'],
-    status: 'In Progress',
+    name: 'Linea',
+    description: 'Production line monitoring dashboard with AI insights.',
+    tech: ['ASP.NET Core', 'Angular', 'TypeScript', 'SQLite', 'OpenAI'],
+    status: 'Personal',
+    github: 'https://github.com/tonymocanu97/linea',
   },
 ];
 
@@ -124,22 +141,47 @@ export function Projects() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex gap-2 pt-2">
-                  <a
-                    href="https://github.com/"
-                    aria-label={`${p.name} source on GitHub`}
-                    className="grid h-9 w-9 place-items-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-                  >
-                    <Github size={16} />
-                  </a>
-                  <a
-                    href="https://github.com/"
-                    aria-label={`${p.name} live demo`}
-                    className="grid h-9 w-9 place-items-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-                  >
-                    <ExternalLink size={16} />
-                  </a>
-                </div>
+                {(p.github || p.demo) && (
+                  <div className="mt-6 flex flex-wrap gap-2 pt-2">
+                    {typeof p.github === 'string' && (
+                      <a
+                        href={p.github}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label={`${p.name} source on GitHub`}
+                        className="grid h-9 w-9 place-items-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      >
+                        <Github size={16} />
+                      </a>
+                    )}
+                    {Array.isArray(p.github) &&
+                      p.github.map((link) => (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          aria-label={`${p.name} ${link.label} source on GitHub`}
+                          title={link.label}
+                          className="flex h-9 items-center gap-1.5 rounded-md border border-border px-3 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                        >
+                          <Github size={16} />
+                          <span className="text-xs font-medium">{link.label}</span>
+                        </a>
+                      ))}
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        aria-label={`${p.name} live demo`}
+                        className="grid h-9 w-9 place-items-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                      >
+                        <ExternalLink size={16} />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </Reveal>

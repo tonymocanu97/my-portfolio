@@ -18,16 +18,31 @@ const schema = z.object({
 
 export function Contact() {
   const [values, setValues] = useState({ name: '', email: '', message: '' });
+  const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const parsed = schema.safeParse(values);
     if (!parsed.success) {
       toast.error(parsed.error.issues[0].message);
       return;
     }
-    toast.success('Thanks - your message is on its way.');
-    setValues({ name: '', email: '', message: '' });
+
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(parsed.data),
+      });
+      if (!res.ok) throw new Error();
+      toast.success('Thanks - your message is on its way.');
+      setValues({ name: '', email: '', message: '' });
+    } catch {
+      toast.error('Something went wrong. Please try again or email me directly.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const field =
@@ -70,10 +85,11 @@ export function Contact() {
           />
           <button
             type="submit"
-            className="w-full rounded-lg px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:scale-[1.02]"
+            disabled={submitting}
+            className="w-full rounded-lg px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
             style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--shadow-glow)' }}
           >
-            Send
+            {submitting ? 'Sending…' : 'Send'}
           </button>
         </form>
 
