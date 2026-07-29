@@ -160,7 +160,7 @@ export function Projects() {
                 </div>
 
                 {(p.github || p.demo) && (
-                  <div className="mt-6 flex flex-wrap gap-2 pt-2">
+                  <div className="mt-auto flex flex-wrap gap-2 pt-6">
                     {typeof p.github === 'string' && (
                       <a
                         href={p.github}
