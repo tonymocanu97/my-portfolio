@@ -6,7 +6,7 @@ type Status = 'Live' | 'In Progress' | 'Personal' | 'Client Work';
 const statusStyles: Record<Status, string> = {
   Live: 'border-primary/50 bg-primary/12 text-primary',
   'In Progress': 'border-border bg-surface-2 text-muted-foreground',
-  Personal : 'border-border bg-surface-2 text-foreground/80',
+  Personal: 'border-border bg-surface-2 text-foreground/80',
   'Client Work': 'border-primary/30 bg-primary/8 text-primary/90',
 };
 
@@ -46,9 +46,17 @@ const projects: {
     demo: 'https://mrcrypto.network/',
   },
   {
+    name: 'CryptoAici',
+    image: '/projects/cryptoaici.png',
+    description: 'Crypto news site covering market updates, blockchain, and DeFi.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Supabase'],
+    status: 'Live',
+    demo: 'https://mrcrypto.network/',
+  },
+  {
     name: 'Gogosh',
     description: 'Mobile app built for a local food & coffee business.',
-    tech: ['React Native', 'Expo', 'TypeScript'],
+    tech: ['React Native', 'Expo', 'TypeScript', 'Supabase'],
     status: 'In Progress',
   },
   {
@@ -73,7 +81,7 @@ const projects: {
     name: 'CaloriePal',
     image: '/projects/caloriepal.png',
     description: 'Fitness and nutrition web app with tracking analytics.',
-    tech: ['ASP.NET Core', 'EF Core', 'MediatR', 'Next.js', 'React', 'TypeScript', 'PostgreSQL'],
+    tech: ['ASP.NET Core', 'EF Core', 'MediatR', 'Next.js', 'React', 'TypeScript', 'Supabase'],
     status: 'Personal',
     github: [
       { label: 'Web', href: 'https://github.com/CaloriePal/caloriepal-web' },
